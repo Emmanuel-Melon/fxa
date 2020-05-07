@@ -237,6 +237,7 @@ const EVENTS = {
 };
 
 const VIEW_ENGAGE_SUBMIT_EVENT_GROUPS = {
+  'add-newsletters': GROUPS.newsletters,
   'enter-email': GROUPS.emailFirst,
   'force-auth': GROUPS.login,
   pair: GROUPS.connectDevice,
@@ -391,6 +392,13 @@ const FUZZY_EVENTS = new Map([
     {
       group: GROUPS.registration,
       event: 'domain_validation_result',
+    },
+  ],
+  [
+    /^flow\.newsletter\.subscribe$/,
+    {
+      group: GROUPS.newsletters,
+      event: 'subscribe',
     },
   ],
 ]);
