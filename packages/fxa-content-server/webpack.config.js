@@ -52,6 +52,10 @@ const webpackConfig = {
       'node_modules',
     ],
     alias: {
+      // '@fxa-components': path.resolve(
+      //   __dirname,
+      //   '../fxa-components'
+      // ),
       'asmcrypto.js': path.resolve(
         __dirname,
         'node_modules/asmcrypto.js/asmcrypto.min.js'
@@ -180,6 +184,14 @@ const webpackConfig = {
             },
           },
         ],
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg|eot|ttf|woff|woff2)$/i,
+        loader: 'url-loader',
+        options: {
+          esModule: false,
+          limit: 8192,
+        },
       },
       {
         test: /\.scss$/,
